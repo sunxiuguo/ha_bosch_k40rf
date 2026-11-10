@@ -98,3 +98,16 @@ This project uses the official specifications and schemas of the:
 - **[Bosch Home Comfort Developer API Documentation](https://github.com/bosch-home-comfort/api-docs)** (OpenAPI specification for Connect-Key K 40 RF / Buderus MX400).
 
 Many thanks to the Bosch Home Comfort Group for providing the open interface documentation for local control and monitoring.
+
+
+## Tests
+
+Using Python 3.14.2 or newer (required by the pinned Home Assistant version):
+
+```bash
+python -m pip install -r requirements-test.txt
+python -m pytest tests -q
+```
+
+The device-routing tests instantiate the real Home Assistant entity classes with synthetic coordinator data.
+They do not connect to a gateway or start Home Assistant; actual device discovery and registration are not covered.

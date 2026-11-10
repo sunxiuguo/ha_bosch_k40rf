@@ -56,7 +56,8 @@ wheels/
 htmlcov/
 .tox/
 .nox/
-tests/
+tests/*
+!tests/test_device_info.py
 
 # macOS system files
 .DS_Store

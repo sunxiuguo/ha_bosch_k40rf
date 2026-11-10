@@ -270,7 +270,7 @@ class BoschK40BinarySensor(CoordinatorEntity[BoschK40DataUpdateCoordinator], Bin
             if (
                 sub_id is None
                 or sub_id == "hs2"
-                or is_hp_specific
+                or (self.coordinator.is_hybrid_system and is_hp_specific)
                 or (not self.coordinator.is_hybrid_system and sub_id in ("hs1", "hybman", "kessel"))
             ):
                 appliance = self.coordinator.get_basic_info_module(is_appliance=True)
